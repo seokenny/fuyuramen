@@ -212,17 +212,6 @@ iframe {
   margin: 40px 5%;
 }
 
-@media only screen and (min-width: 768px) {
-  .menu__desktop {
-    display: block;
-  }
-  .row__css {
-    width: 45%;
-    display: inline-block;
-    margin: 30px 2.5%;
-  }
-}
-
 .hidden {
   display: none !important;
 }
@@ -234,11 +223,22 @@ iframe {
   margin: 30px 0;
 }
 
-/**MENU HTML**/
-.menu__row {
-  margin-top: 30px;
+.menu__content {
+  max-height: 2000px;
+  opacity: 1;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
+.no-height {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+/**MENU HTML**/
 .menu__row-header {
   cursor: pointer;
 }
@@ -249,5 +249,19 @@ iframe {
 
 .menu__row .section__header-sub {
   padding: 30px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .menu__desktop {
+    display: block;
+  }
+  .menu__row {
+    margin-top: 30px;
+  }
+  .row__css {
+    width: 45%;
+    display: inline-block;
+    margin: 30px 2.5%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

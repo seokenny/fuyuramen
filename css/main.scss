@@ -203,21 +203,6 @@ iframe {
     }
 }
 
-@media only screen and (min-width: 768px) {
-    .menu {
-        &__desktop {
-            display: block;
-        }
-    }
-    .row {
-        &__css {
-            width: 45%;
-            display: inline-block;
-            margin: 30px 2.5%;
-        }
-    }
-}
-
 .hidden {
     display: none !important;
 }
@@ -229,12 +214,22 @@ iframe {
     margin: 30px 0;
 }
 
+.menu__content {
+    max-height: 2000px;
+    opacity: 1;
+    transition: all .5s ease-in-out;
+}
 
+.no-height {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+}
 
 /**MENU HTML**/
 
 .menu__row {
-    margin-top: 30px;
     &-header {
         cursor: pointer;
     }
@@ -243,5 +238,23 @@ iframe {
     }
     & .section__header-sub {
         padding: 30px 0;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .menu {
+        &__desktop {
+            display: block;
+        }
+        &__row {
+            margin-top: 30px;
+        }
+    }
+    .row {
+        &__css {
+            width: 45%;
+            display: inline-block;
+            margin: 30px 2.5%;
+        }
     }
 }
