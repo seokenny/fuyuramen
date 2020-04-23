@@ -19,7 +19,6 @@ p {
 nav {
   height: 65px;
   width: 100%;
-  background-color: black;
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -152,6 +151,42 @@ nav {
   right: 0;
 }
 
+.backtotop {
+  opacity: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: #c50808;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 500;
+  border-radius: 35px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.backtotop__image {
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.backtotop:hover {
+  -webkit-transform: scale(1.1) translateY(-10px);
+          transform: scale(1.1) translateY(-10px);
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  background-color: red;
+}
+
+.opacity {
+  opacity: 1;
+}
+
 .banner {
   height: 100vh;
   width: 100%;
@@ -190,7 +225,6 @@ nav {
   z-index: 2;
   width: 80%;
   margin-left: 5%;
-  border: 1px solid #ccc;
   padding: 5%;
   text-align: center;
   background-color: white;
@@ -284,8 +318,16 @@ nav {
   background-repeat: no-repeat;
 }
 
+#gallery {
+  height: 450px;
+}
+
+.gallery img {
+  height: 100%;
+}
+
 .footer {
-  height: 150px;
+  height: 100px;
 }
 
 .location {
@@ -294,7 +336,6 @@ nav {
   width: 70%;
   margin-left: 10%;
   margin-top: -25px;
-  border: 1px solid #ccc;
   text-align: center;
   background-color: white;
   padding: 5%;
@@ -305,9 +346,17 @@ nav {
   width: 100%;
 }
 
+.location__hours-address {
+  margin-top: 20px;
+}
+
+.location__hours-address p {
+  line-height: unset;
+}
+
 .location__google {
   width: 100%;
-  height: 200px;
+  height: 250px;
   background-color: grey;
 }
 
@@ -385,6 +434,28 @@ iframe {
   margin-top: 30px;
 }
 
+.copyright {
+  color: #eee;
+  padding-top: 50px;
+  font-size: 10px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 650px) {
+  .location__hours-css {
+    display: inline-block;
+  }
+  .location__hours-left {
+    text-align: right;
+  }
+  .location__hours-center {
+    margin: 0 20px;
+  }
+  .location__hours-right {
+    text-align: left;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .menu__desktop {
     display: block;
@@ -397,5 +468,20 @@ iframe {
     display: inline-block;
     margin: 30px 2.5%;
   }
+}
+
+.slick {
+  padding-top: 125px;
+}
+
+.slick-track {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  height: 200px;
+}
+
+.slick-slide {
+  height: inherit !important;
 }
 /*# sourceMappingURL=main.css.map */

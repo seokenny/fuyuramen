@@ -7,6 +7,18 @@ $(document).ready(function(){
         $("#nav-icon3").toggleClass('open');
         $(".mobile__nav").toggleClass("mobile__nav-show");
     });
+    $('.slick').slick({
+        autoplay: true,
+        autoplaySpeed: 1000,
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        centerMode: true,
+        variableWidth: true,
+        arrows: false,
+        adaptiveHeight: true
+      });
 });
 
 function show() {
@@ -18,6 +30,7 @@ function show() {
         }
     }
 }
+
 
 function worklistScroll1() {
     var goTo = $("#location");
@@ -41,4 +54,24 @@ function home() {
         top-=0;
         $('html,body').animate({scrollTop: top}, 'slow');
         return false;
+}
+
+$(document).on('scroll', function() {
+    if($(this).scrollTop()+100>=$("#aboutus").position().top){
+        $(".backtotop").addClass("opacity");
+        $("nav").css({
+            backgroundColor: "black"
+        });
+    }
+    else {
+        $(".backtotop").removeClass("opacity");
+        $("nav").css({
+            backgroundColor: "unset"
+        });
+    }
+});
+
+function backToTop() {
+    $('html,body').animate({scrollTop: 0}, 'slow');
+    return false;
 }

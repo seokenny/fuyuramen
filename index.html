@@ -3,6 +3,7 @@
 <head>
     <title>Fuyu Ramen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -24,6 +25,11 @@
             <span></span>
         </div>
     </nav>
+
+    <div class="backtotop" onclick="backToTop()">
+        <img class="backtotop__image" src="images/up-arrow.png">
+    </div>
+
     <div class="contain">
         <div class="banner"></div>
 
@@ -117,7 +123,12 @@
 
         <section id="gallery">
             <div class="gallery">
-
+                <div class="slick">
+                    <div><img src="images/n1.jpg"></div>
+                    <div><img src="images/n2.jpg"></div>
+                    <div><img src="images/n3.jpg"></div>
+                    <div><img src="images/n4.jpg"></div>
+                  </div>
             </div>
         </section>
 
@@ -134,21 +145,21 @@
                         <p>4617 Queens Blvd, Long Island City, NY 11104</p>
                         <p>718.482.1642</p>
                     </div>
-                    <div class="location__hours-left">
+                    <div class="location__hours-left location__hours-css">
                         <ul class="location__hours-sect">
                             <span class="bold">Mon - Weds</span>
                             <li>12PM - 3PM</li>
                             <li>5PM - 10:30PM</li>
                         </ul>
                     </div>
-                    <div class="location__hours-center">
+                    <div class="location__hours-center location__hours-css">
                         <ul class="location__hours-sect">
                             <span class="bold">Thurs - Sat</span>
                             <li>12PM - 3PM</li>
                             <li>5PM - 11PM</li>
                         </ul>
                     </div>
-                    <div class="location__hours-right">
+                    <div class="location__hours-right location__hours-css">
                         <ul class="location__hours-sect">
                             <span class="bold">Sunday</span>
                             <li>12PM - 3PM</li>
@@ -161,18 +172,22 @@
 
         <footer>
             <div class="footer">
-                
+                <p class="copyright">&copy; Copyright Fuyu Ramen 2020</p>
             </div>
         </footer>
 
     </div>
 
+
     <script
     src="https://code.jquery.com/jquery-3.5.0.js"
     integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
     crossorigin="anonymous"></script>
-  
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <script src="js/main.js"></script>
+    
 </body>
 
 
