@@ -200,8 +200,8 @@ nav {
 .contentcontain {
     width: 80%;
     margin-left: 10%;
-    margin-top: 75px;
-    margin-bottom: 75px;
+    margin-top: 150px;
+    margin-bottom: 150px;
     color: white;
     &__image {
         width: 40%;
@@ -449,6 +449,12 @@ iframe {
 }
 
 @media only screen and (min-width: 768px) {
+    .contentcontain {
+        width: 605px;
+        margin: auto;
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
     .menu {
         &__desktop {
             display: block;
@@ -477,4 +483,22 @@ iframe {
 
 .slick-slide {
     height: inherit !important;
+}
+
+@media only screen and (min-width: 1100px) {
+    .menu {
+        width: 870px !important;
+        margin: auto;
+    }
+    // .contentcontain {
+    //     width: 870px;
+    // }
+    #menu {
+        margin: auto;
+        margin-top: -25px;
+    }
+    .location {
+        width: 760px !important;
+        margin: auto;
+    }
 }
