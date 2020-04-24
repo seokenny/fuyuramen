@@ -6,6 +6,7 @@
 
 body {
     background-color: black;
+    overflow: hidden;
 }
 
 ul {
@@ -24,6 +25,7 @@ nav {
     z-index: 1000;
     display: flex;
     justify-content: flex-end;
+    background-color: rgba(0, 0, 0, .9);
 }
 * {
     margin: 0;
@@ -137,6 +139,7 @@ nav {
               &:hover {
                   transform: scale(1.05) translateX(10px);
                   font-weight: 500;
+                  color: rgb(197, 0, 0);
               }
           }
       }
@@ -152,6 +155,53 @@ nav {
       right: 0;
   }
   
+.desktop__nav {
+    color: white;
+    display: none;
+    padding-right: 5%;
+    & ul {
+        display: flex;
+        font-weight: bold;
+        & a {
+            color: white;
+            text-decoration: none;
+        }
+        & li {
+            margin: 17px 0 0 45px;
+            cursor: pointer;
+            padding: 7px 15px;
+            transition: all .2s ease-in-out;
+            &:hover {
+                background-color: rgb(197, 8, 8);
+            }
+        }
+    }
+}
+
+.menu__page.desktop__nav {
+    display: block;
+    & ul {
+        display: block;
+    }
+}
+
+.restaurant {
+    font-family: "Bebas Neue";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 10px;
+    color: white;
+    background-color: rgb(197, 0, 0);
+    padding: 14px 20px 10px 27px;
+}
+
+.desktop__nav ul li.alwayson {
+    background-color: rgb(197, 0, 0);
+    transition: all .5s ease-in-out;
+}
+
 
 .backtotop {
     opacity: 0;
@@ -179,7 +229,6 @@ nav {
     }
 }
 
-
 .opacity {
     opacity: 1;
 }
@@ -188,13 +237,21 @@ nav {
     height: 100vh;
     width: 100%;
     background-color: #ccc;
-    background-image: url("../images/hero.jpg");
-    background-position: top;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../images/hero.jpg");
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
     &__menu {
         height: 25vh;
     }
+}
+
+.heroimage {
+    width: 100%;
+    height: auto;
+    transition: all .3s ease-in-out;
+    animation: infiniteScale 10s infinite;
 }
 
 .contentcontain {
@@ -296,7 +353,7 @@ nav {
     height: 450px;
     background-color: #aaa;
     margin-top: -25px;
-    background-image: url("../images/hero.jpg");
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../images/hero.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -344,6 +401,9 @@ nav {
     }
     &__hours-sect {
         margin: 25px 0;
+        & li {
+            margin-top: 10px;
+        }
     }
 }
 
@@ -449,6 +509,9 @@ iframe {
 }
 
 @media only screen and (min-width: 768px) {
+    #nav-icon3 {
+        display: none;
+    }
     .contentcontain {
         width: 605px;
         margin: auto;
@@ -470,6 +533,12 @@ iframe {
             margin: 30px 2.5%;
         }
     }
+    .desktop__nav {
+        display: block !important;
+    }
+    .location__google {
+        height: 350px;
+    }
 }
 
 .slick {
@@ -483,6 +552,13 @@ iframe {
 
 .slick-slide {
     height: inherit !important;
+    margin: 0 20px;
+}
+
+@media only screen and (max-width: 554px) {
+    .restaurant {
+        font-size: 1.5rem;
+    }
 }
 
 @media only screen and (min-width: 1100px) {
@@ -490,9 +566,6 @@ iframe {
         width: 870px !important;
         margin: auto;
     }
-    // .contentcontain {
-    //     width: 870px;
-    // }
     #menu {
         margin: auto;
         margin-top: -25px;
@@ -500,5 +573,58 @@ iframe {
     .location {
         width: 760px !important;
         margin: auto;
+        margin-top: -25px;
+        &__hours-sect {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .desktop__nav {
+        color: white;
+        padding-right: 5%;
+    }
+    & ul {
+        display: flex;
+        & li {
+            margin: 0;
+        }
+    }
+}
+
+@keyframes infiniteScale {
+    from {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.015);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes infiniteCenter {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.loader {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    & .restaurant {
+        animation: infiniteCenter 3s infinite;
     }
 }

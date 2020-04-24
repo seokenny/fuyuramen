@@ -3,12 +3,19 @@
 <head>
     <title>Fuyu Ramen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
+    <div class="loader">
+        <div>
+            <h4 class="restaurant">Fuyu Ramen<br/>Loading...</h4>
+        </div>
+    </div>
     <nav>
         <div class="mobile__nav">
             <ul>
@@ -24,6 +31,13 @@
             <span></span>
             <span></span>
         </div>
+        <div class="desktop__nav">
+            <ul>
+                <li onclick="worklistScroll2()">About</li>
+                <li onclick="worklistScroll1()">Location</li>
+                <a href="menu.html"><li class="alwayson">Menu</li></a>
+            </ul>
+        </div>
     </nav>
 
     <div class="backtotop" onclick="backToTop()">
@@ -31,7 +45,10 @@
     </div>
 
     <div class="contain">
-        <div class="banner"></div>
+        <div class="banner">
+            <img src="images/herobnw.jpg" class="heroimage">
+            <h1 class="restaurant">Fuyu Ramen</h1>
+        </div>
 
         <section id="aboutus">
             <div class="contentcontain">
@@ -44,7 +61,7 @@
         </section>
 
         <section id="menu">
-            <div class="menu">
+            <div class="menu animated">
                 <h1 class="section__header">Menu</h1>
                 <!--Desktop-->
                 <div class="liner"></div>
@@ -148,35 +165,43 @@
                 <div class="location__head">
                     <h1 class="section__header">Location</h1>
                 </div>
+
                 <div class="location__google">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.8458497546467!2d-73.92023458458955!3d40.74341734362974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25fc1a5981695%3A0xb2687ebd776e58db!2sFUYU%20RAMEN!5e0!3m2!1sen!2sus!4v1587599388077!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
+
                 <div class="location__hours">
                     <div class="location__hours-address">
                         <p>4617 Queens Blvd, Long Island City, NY 11104</p>
                         <p>718.482.1642</p>
                     </div>
-                    <div class="location__hours-left location__hours-css">
-                        <ul class="location__hours-sect">
-                            <span class="bold">Mon - Weds</span>
-                            <li>12PM - 3PM</li>
-                            <li>5PM - 10:30PM</li>
-                        </ul>
+
+                    <div>
+                        <div class="location__hours-left location__hours-css">
+                            <ul class="location__hours-sect">
+                                <span class="bold">Mon - Weds</span>
+                                <li>12PM - 3PM</li>
+                                <li>5PM - 10:30PM</li>
+                            </ul>
+                        </div>
+
+                        <div class="location__hours-center location__hours-css">
+                            <ul class="location__hours-sect">
+                                <span class="bold">Thurs - Sat</span>
+                                <li>12PM - 3PM</li>
+                                <li>5PM - 11PM</li>
+                            </ul>
+                        </div>
+
+                        <div class="location__hours-right location__hours-css">
+                            <ul class="location__hours-sect">
+                                <span class="bold">Sunday</span>
+                                <li>12PM - 3PM</li>
+                                <li>5PM - 10PM</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="location__hours-center location__hours-css">
-                        <ul class="location__hours-sect">
-                            <span class="bold">Thurs - Sat</span>
-                            <li>12PM - 3PM</li>
-                            <li>5PM - 11PM</li>
-                        </ul>
-                    </div>
-                    <div class="location__hours-right location__hours-css">
-                        <ul class="location__hours-sect">
-                            <span class="bold">Sunday</span>
-                            <li>12PM - 3PM</li>
-                            <li>5PM - 10PM</li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
         </section>
